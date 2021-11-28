@@ -1,0 +1,43 @@
+* {
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.code {
+  font-size: 16px;
+  background: #d8d8d8;
+  padding: 0 5px;
+  border-radius: 5px; }
+
+body {
+  padding: 2rem;
+  height: 100vh;
+  background-color: #f3f4f5;
+  font-family: "Outfit", sans-serif; }
+
+.hidden {
+  display: none; }
+
+.page__header {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 3rem; }
+  .page__header--logo {
+    width: 20%; }
+  .page__header--title {
+    color: #00b0e1; }
+
+.page__footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  padding: 1rem;
+  color: #999; }
+
+.main__list {
+  padding-left: 2rem;
+  padding-bottom: 20px; }
+
+/*# sourceMappingURL=main.css.map */
