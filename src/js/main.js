@@ -12,39 +12,42 @@ let html = '';
 //User Login
 
 function userLogin() {
-  if (user.value === 'CEO' && pass.value === '1234') {
+  let currentList = '';
+  if (user.value === login.user && pass.value === login.pass) {
     console.log('im in');
-    renderList();
+    for (let index = 0; index < results.length; index++) {
+      const malware = results[index];
+      currentList += renderMalwareItem(malware);
+    }
   } else {
     alert('Porfavor ingrese nombre de usuario y contraseña correctos.');
   }
-  resultsContainer.innerHTML = html;
+  resultsContainer.innerHTML = currentList;
 }
 
 //Render List of results
 
-function renderList() {
+function renderMalwareItem(malware) {
   html += `  <h2 class="results__tittle">resultados</h2>
-   <li key={index} className="results__item">
-      <p className="results__name">Nombre del fichero: ${results.name}</p>
-      <p className="results__date">
-        <label className="results__label">
-          fecha de inserción: ${results.date}
-        </label>
-      </p>
-      <p className="results__actualization">
-        <label className="results__label">
-          última actualización: ${results.actualization}
-        </label>
-      </p>
-      <p className="results__os">
-        <label className="results__label">
-          sistema operativo: ${results.os}
-        </label>
-      </p>
-    </li>`;
-
-  resultsContainer.innerHTML = html;
+       <li key={index} className="results__item">
+          <p className="results__name">Nombre del fichero: ${malware.name}</p>
+          <p className="results__date">
+            <label className="results__label">
+              fecha de inserción: ${malware.date}
+            </label>
+          </p>
+          <p className="results__actualization">
+            <label className="results__label">
+              última actualización: ${malware.actualization}
+            </label>
+          </p>
+          <p className="results__os">
+            <label className="results__label">
+              sistema operativo: ${malware.os}
+            </label>
+          </p>
+        </li>`;
+  return html;
 }
 
 // Handle Functions
