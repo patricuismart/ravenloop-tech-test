@@ -20,7 +20,6 @@ let login = [];
 let results = [];
 
 let buttons = '';
-let currentList = '';
 
 //User Login
 function userLogin() {
