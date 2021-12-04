@@ -65,17 +65,16 @@ function changePage(page) {
 
   if (page < 1) page = 1;
   if (page > numPages()) page = numPages();
-  resultsContainer.innerHTML = '';
 
   //Render List of results
 
+  resultsContainer.innerHTML += ` <h2 class="results__tittle">resultados</h2></ul>`;
   for (
     var i = (page - 1) * records_per_page;
     i < page * records_per_page && i < results.length;
     i++
   ) {
-    resultsContainer.innerHTML += `  <h2 class="results__tittle">resultados</h2>
-    <li class="results__item">
+    resultsContainer.innerHTML += `<li class="results__item">
        <p class="results__name">Nombre del fichero: ${results[i].name}</p>
        <p class="results__date">fecha de inserción: ${results[i].date}</p>
        <p class="results__actualization">última actualización: ${results[i].actualization}</p>
