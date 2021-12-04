@@ -18,7 +18,6 @@ var page_span = document.getElementById('page');
 // info array results api json
 let login = [];
 let results = [];
-
 let buttons = '';
 
 //User Login
@@ -28,11 +27,13 @@ function userLogin() {
     hideSection.classList.add('hidden');
     pagination.classList.remove('hidden');
     logoutButon.classList.remove('hidden');
+    changePage(1);
   } else {
     alert('Porfavor ingrese nombre de usuario y contraseña correctos.');
+    user.value = '';
+    pass.value = '';
   }
   // call to render results function (with pagination)
-  changePage(1);
 }
 
 // Handle Functions
@@ -62,6 +63,7 @@ function nextPage() {
   if (current_page < numPages()) {
     current_page++;
     changePage(current_page);
+    listenList();
   }
 }
 
@@ -79,12 +81,13 @@ function changePage(page) {
     i < page * records_per_page && i < results.length;
     i++
   ) {
-    resultsContainer.innerHTML += `<li class="results__item">
-       <p class="results__name">Nombre del fichero: ${results[i].name}</p>
-       <p class="results__date">fecha de inserción: ${results[i].date}</p>
-       <p class="results__actualization">última actualización: ${results[i].actualization}</p>
-       <p class="results__os">sistema operativo: ${results[i].os}</p>
-     </li>`;
+    resultsContainer.innerHTML += `<li id=${results[i].id} class="results__item js_item">
+    <p class="results__name">Nombre del fichero: ${results[i].name}</p>
+    <p class="results__date">fecha de inserción: ${results[i].date}</p>
+    <p class="results__actualization">última actualización: ${results[i].actualization}</p>
+    <p class="results__os">sistema operativo: ${results[i].os}</p>
+  </li>`;
+    listenList();
   }
 
   //render page number
@@ -110,6 +113,46 @@ function numPages() {
   return Math.ceil(results.length / records_per_page);
 }
 
+// Detail of result
+
+// Handle function selected item by id
+
+function handleItem(ev) {
+  var selectedItem = ev.currentTarget.id;
+  console.log(selectedItem);
+
+  //render detail item  selected
+  let html = '';
+  for (const result of results) {
+    html = `<li id=${result.id} class="results__item js_item">
+    <p class="results__name">Nombre del fichero: ${result.name}</p>
+    <p class="results__extension">Extension: ${result.extension}</p>
+    <p class="results__size">Tamaño: ${result.size}</p>
+    <p class="results__hash">Hash: ${result.hash.md5}</p>
+    <p class="results__hash">Sha256: ${result.hash.sha256}</p>
+    <p class="results__hash">Sha1: ${result.hash.sha1}</p>
+    <p class="results__ip">IP: ${result.ip}</p>
+    <p class="results__score">Puntuación: ${result.score}</p>
+    <p class="results__fileList">Listado ficheros: ${result.fileList.one}</p>
+    <p class="results__fileList">Listado ficheros: ${result.fileList.two}</p>
+    <p class="results__fileList">Listado ficheros: ${result.fileList.three}</p>
+    <p class="results__antivirusList">Kaspersky: ${result.antivirusList.Kaspersky}</p>
+    <p class="results__antivirusList">ESET: ${result.antivirusList.ESET}</p>
+    <p class="results__antivirusList">Norton: ${result.antivirusList.Norton}</p>
+     </li>`;
+  }
+  pagination.classList.add('hidden');
+  resultsContainer.innerHTML = html;
+}
+
+//Listen to all the items, go through them and identify by id on click with event
+
+function listenList() {
+  const listMalware = document.querySelectorAll('.js_item');
+  for (const itemClicked of listMalware) {
+    itemClicked.addEventListener('click', handleItem);
+  }
+}
 //Call to api
 // FETCH
 function callToApi() {
