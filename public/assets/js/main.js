@@ -65,10 +65,10 @@ function changePage(page) {
 
   if (page < 1) page = 1;
   if (page > numPages()) page = numPages();
+  resultsContainer.innerHTML = '';
 
   //Render List of results
 
-  resultsContainer.innerHTML += ` <h2 class="results__tittle">resultados</h2></ul>`;
   for (
     var i = (page - 1) * records_per_page;
     i < page * records_per_page && i < results.length;
