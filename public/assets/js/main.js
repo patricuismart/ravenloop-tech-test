@@ -5,44 +5,33 @@ const user = document.querySelector('.js_user');
 const pass = document.querySelector('.js_pass');
 const button = document.querySelector('.js_buton');
 const hideSection = document.getElementById('hideSection');
-const resultsContainer = document.querySelector('.js_results');
+var resultsContainer = document.getElementById('resultsContainer');
 const pagination = document.querySelector('.js_pagination');
+
+// variables pagination
+
+var btn_next = document.getElementById('btn_next');
+var btn_prev = document.getElementById('btn_prev');
+var page_span = document.getElementById('page');
 
 // info array results api json
 let login = [];
 let results = [];
-let html = '';
+
 let buttons = '';
+let currentList = '';
 
 //User Login
 function userLogin() {
-  let currentList = '';
   if (user.value === login.user && pass.value === login.pass) {
     console.log('im in');
-
-    // go through array of objects
-    for (let index = 0; index < results.length; index++) {
-      const malware = results[index];
-      currentList = renderMalwareItem(malware);
-      hideSection.classList.add('hidden');
-      console.log('malware', malware);
-    }
+    hideSection.classList.add('hidden');
+    pagination.classList.remove('hidden');
   } else {
     alert('Porfavor ingrese nombre de usuario y contraseña correctos.');
   }
-  resultsContainer.innerHTML = currentList;
-}
-
-//Render List of results
-function renderMalwareItem(malware) {
-  html += `  <h2 class="results__tittle">resultados</h2>
-       <li class="results__item">
-          <p class="results__name">Nombre del fichero: ${malware.name}</p>
-          <p class="results__date">fecha de inserción: ${malware.date}</p>
-          <p class="results__actualization">última actualización: ${malware.actualization}</p>
-          <p class="results__os">sistema operativo: ${malware.os}</p>
-        </li>`;
-  return html;
+  // call to render results function (with pagination)
+  changePage(1);
 }
 
 // Handle Functions
@@ -53,6 +42,69 @@ function handleButton(event) {
 }
 
 //Pagination
+
+var current_page = 1;
+var records_per_page = 4;
+
+function prevPage() {
+  if (current_page > 1) {
+    current_page--;
+    changePage(current_page);
+  }
+}
+
+function nextPage() {
+  if (current_page < numPages()) {
+    current_page++;
+    changePage(current_page);
+  }
+}
+
+function changePage(page) {
+  // Validate page
+
+  if (page < 1) page = 1;
+  if (page > numPages()) page = numPages();
+  resultsContainer.innerHTML = '';
+
+  //Render List of results
+
+  for (
+    var i = (page - 1) * records_per_page;
+    i < page * records_per_page && i < results.length;
+    i++
+  ) {
+    resultsContainer.innerHTML += `  <h2 class="results__tittle">resultados</h2>
+    <li class="results__item">
+       <p class="results__name">Nombre del fichero: ${results[i].name}</p>
+       <p class="results__date">fecha de inserción: ${results[i].date}</p>
+       <p class="results__actualization">última actualización: ${results[i].actualization}</p>
+       <p class="results__os">sistema operativo: ${results[i].os}</p>
+     </li>`;
+  }
+
+  //render page number
+
+  page_span.innerHTML = page;
+
+  if (page == 1) {
+    btn_prev.style.visibility = 'hidden';
+  } else {
+    btn_prev.style.visibility = 'visible';
+  }
+
+  if (page == numPages()) {
+    btn_next.style.visibility = 'hidden';
+  } else {
+    btn_next.style.visibility = 'visible';
+  }
+}
+
+// returns the integer greater or equal closest to division
+
+function numPages() {
+  return Math.ceil(results.length / records_per_page);
+}
 
 //Call to api
 // FETCH

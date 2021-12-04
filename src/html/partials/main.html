@@ -11,12 +11,14 @@
   </section>
 
   <section class="results">
-    <ul id="listingTable" class="pagingBox js_results">
+    <ul id="resultsContainer" class="pagingBox js_results">
     </ul>
   </section>
   
 
-  <section class="pagination js_pagination">
-  
+  <section class="pagination hidden js_pagination">
+    <a href="javascript:prevPage()" id="btn_prev">Prev</a>
+    <a href="javascript:nextPage()" id="btn_next">Next</a>
+    page: <span id="page"></span>
   </section>
 </main>
