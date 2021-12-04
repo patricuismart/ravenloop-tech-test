@@ -5,6 +5,7 @@ const user = document.querySelector('.js_user');
 const pass = document.querySelector('.js_pass');
 const loginButton = document.querySelector('.js_login');
 const logoutButon = document.querySelector('.js_logout');
+const buttonBack = document.querySelector('.js_buttonBack');
 const hideSection = document.getElementById('hideSection');
 var resultsContainer = document.getElementById('resultsContainer');
 const pagination = document.querySelector('.js_pagination');
@@ -87,6 +88,7 @@ function changePage(page) {
     <p class="results__actualization">última actualización: ${results[i].actualization}</p>
     <p class="results__os">sistema operativo: ${results[i].os}</p>
   </li>`;
+    buttonBack.classList.add('hidden');
     listenList();
   }
 
@@ -140,6 +142,7 @@ function handleItem(ev) {
     <p class="results__antivirusList">ESET: ${result.antivirusList.ESET}</p>
     <p class="results__antivirusList">Norton: ${result.antivirusList.Norton}</p>
      </li>`;
+    buttonBack.classList.remove('hidden');
   }
   pagination.classList.add('hidden');
   resultsContainer.innerHTML = html;
@@ -153,6 +156,14 @@ function listenList() {
     itemClicked.addEventListener('click', handleItem);
   }
 }
+
+// UI Back return to list of all results
+function handleBack(event) {
+  event.preventDefault();
+  changePage(1);
+  pagination.classList.remove('hidden');
+}
+
 //Call to api
 // FETCH
 function callToApi() {
@@ -171,3 +182,4 @@ callToApi();
 //Events
 loginButton.addEventListener('click', handleLogin);
 logoutButon.addEventListener('click', handleLogout);
+buttonBack.addEventListener('click', handleBack);
