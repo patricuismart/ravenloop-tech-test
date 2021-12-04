@@ -28,11 +28,14 @@ function userLogin() {
     hideSection.classList.add('hidden');
     pagination.classList.remove('hidden');
     logoutButon.classList.remove('hidden');
+
+    // call to render results function (with pagination)
+    changePage(1);
   } else {
     alert('Porfavor ingrese nombre de usuario y contraseña correctos.');
+    user.value = '';
+    pass.value = '';
   }
-  // call to render results function (with pagination)
-  changePage(1);
 }
 
 // Handle Functions
