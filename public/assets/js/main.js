@@ -186,5 +186,3 @@ callToApi();
 loginButton.addEventListener('click', handleLogin);
 logoutButon.addEventListener('click', handleLogout);
 buttonBack.addEventListener('click', handleBack);
-
-//# sourceMappingURL=main.js.map
