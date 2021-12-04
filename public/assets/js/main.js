@@ -3,7 +3,8 @@
 // global variables
 const user = document.querySelector('.js_user');
 const pass = document.querySelector('.js_pass');
-const button = document.querySelector('.js_buton');
+const loginButton = document.querySelector('.js_login');
+const logoutButon = document.querySelector('.js_logout');
 const hideSection = document.getElementById('hideSection');
 var resultsContainer = document.getElementById('resultsContainer');
 const pagination = document.querySelector('.js_pagination');
@@ -36,9 +37,13 @@ function userLogin() {
 
 // Handle Functions
 
-function handleButton(event) {
+function handleLogin(event) {
   event.preventDefault();
   userLogin();
+}
+
+function handleLogout() {
+  location.reload();
 }
 
 //Pagination
@@ -121,6 +126,7 @@ function callToApi() {
 callToApi();
 
 //Events
-button.addEventListener('click', handleButton);
+loginButton.addEventListener('click', handleLogin);
+logoutButon.addEventListener('click', handleLogout);
 
 //# sourceMappingURL=main.js.map
