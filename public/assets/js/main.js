@@ -111,7 +111,6 @@ function changePage(page) {
 function numPages() {
   return Math.ceil(results.length / records_per_page);
 }
-
 // Detail of result
 
 // Handle function selected item by id
@@ -125,9 +124,15 @@ function handleItem(ev) {
   for (const result of results) {
     html = `<li id=${result.id} class="results__item js_item">
        <p class="results__name">Nombre del fichero: ${result.name}</p>
-       <p class="results__date">fecha de inserción: ${result.date}</p>
-       <p class="results__actualization">última actualización: ${result.actualization}</p>
-       <p class="results__os">sistema operativo: ${result.os}</p>
+       <p class="results__extension">fecha de inserción: ${result.extension}</p>
+       <p class="results__size">última actualización: ${result.size}</p>
+       <p class="results__hash">sistema operativo: ${result.hash}</p>
+       <p class="results__ip">sistema operativo: ${result.ip}</p>
+       <p class="results__score">sistema operativo: ${result.score}</p>
+       <p class="results__os">sistema operativo: ${result.score}</p>
+       <p class="results__fileList">sistema operativo: ${result.fileList}</p>
+       <p class="results__antivirusList">sistema operativo: ${result.antivirusList}</p>
+
      </li>`;
   }
   resultsContainer.innerHTML = html;
