@@ -124,14 +124,13 @@ function handleItem(ev) {
   for (const result of results) {
     html = `<li id=${result.id} class="results__item js_item">
        <p class="results__name">Nombre del fichero: ${result.name}</p>
-       <p class="results__extension">fecha de inserción: ${result.extension}</p>
-       <p class="results__size">última actualización: ${result.size}</p>
-       <p class="results__hash">sistema operativo: ${result.hash}</p>
-       <p class="results__ip">sistema operativo: ${result.ip}</p>
-       <p class="results__score">sistema operativo: ${result.score}</p>
-       <p class="results__os">sistema operativo: ${result.score}</p>
-       <p class="results__fileList">sistema operativo: ${result.fileList}</p>
-       <p class="results__antivirusList">sistema operativo: ${result.antivirusList}</p>
+       <p class="results__extension">Extension: ${result.extension}</p>
+       <p class="results__size">Tamaño: ${result.size}</p>
+       <p class="results__hash">Hash: ${result.hash}</p>
+       <p class="results__ip">IP: ${result.ip}</p>
+       <p class="results__score">Puntuación: ${result.score}</p>
+       <p class="results__fileList">Listado ficheros: ${result.fileList}</p>
+       <p class="results__antivirusList">Listado antivirus: ${result.antivirusList}</p>
 
      </li>`;
   }
