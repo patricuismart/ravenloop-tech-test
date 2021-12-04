@@ -28,14 +28,11 @@ function userLogin() {
     hideSection.classList.add('hidden');
     pagination.classList.remove('hidden');
     logoutButon.classList.remove('hidden');
-
-    // call to render results function (with pagination)
-    changePage(1);
   } else {
     alert('Porfavor ingrese nombre de usuario y contraseña correctos.');
-    user.value = '';
-    pass.value = '';
   }
+  // call to render results function (with pagination)
+  changePage(1);
 }
 
 // Handle Functions
@@ -65,6 +62,7 @@ function nextPage() {
   if (current_page < numPages()) {
     current_page++;
     changePage(current_page);
+    listenList();
   }
 }
 
@@ -82,12 +80,13 @@ function changePage(page) {
     i < page * records_per_page && i < results.length;
     i++
   ) {
-    resultsContainer.innerHTML += `<li class="results__item">
+    resultsContainer.innerHTML += `<li id=${results[i].id} class="results__item js_item">
        <p class="results__name">Nombre del fichero: ${results[i].name}</p>
        <p class="results__date">fecha de inserción: ${results[i].date}</p>
        <p class="results__actualization">última actualización: ${results[i].actualization}</p>
        <p class="results__os">sistema operativo: ${results[i].os}</p>
      </li>`;
+    listenList();
   }
 
   //render page number
@@ -111,6 +110,36 @@ function changePage(page) {
 
 function numPages() {
   return Math.ceil(results.length / records_per_page);
+}
+
+// Detail of result
+
+// Handle function selected item by id
+
+function handleItem(ev) {
+  var selectedItem = ev.currentTarget.id;
+  console.log(selectedItem);
+
+  //render detail item  selected
+  let html = '';
+  for (const result of results) {
+    html = `<li id=${result.id} class="results__item js_item">
+       <p class="results__name">Nombre del fichero: ${result.name}</p>
+       <p class="results__date">fecha de inserción: ${result.date}</p>
+       <p class="results__actualization">última actualización: ${result.actualization}</p>
+       <p class="results__os">sistema operativo: ${result.os}</p>
+     </li>`;
+  }
+  resultsContainer.innerHTML = html;
+}
+
+//Listen to all the items, go through them and identify by id on click with event
+
+function listenList() {
+  const listMalware = document.querySelectorAll('.js_item');
+  for (const itemClicked of listMalware) {
+    itemClicked.addEventListener('click', handleItem);
+  }
 }
 
 //Call to api
