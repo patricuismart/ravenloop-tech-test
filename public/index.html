@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/main.css" />
+
     <link rel="icon" href="./assets/images/favicon.png" />
   </head>
 
@@ -26,19 +27,25 @@
       </header>
 
       <main class="page__main">
-        <h1 class="title">Login</h1>
-        <form action="#" class="form ">
-          <label for="user">Usuario:</label>
-          <input type="text" id="user" class="form__user js_user" />
-          <label for="pass">Password:</label>
-          <input type="password" id="pass" class="form__pass js_pass" />
-          <input type="submit" value="Go" class="form__buton js_buton"></input>
-        </form>
+        <section class="login" id="hideSection">
+          <h1 class="login__title">Login</h1>
+          <form action="#" class="login__form ">
+            <label for="user">Usuario:</label>
+            <input type="text" id="user" class="form__user js_user" />
+            <label for="pass">Password:</label>
+            <input type="password" id="pass" class="form__pass js_pass" />
+            <input type="submit" value="Go" class="form__buton js_buton"></input>
+          </form>
+        </section>
 
         <section class="results">
-         
-          <ul class="results__container js_results">
+          <ul id="listingTable" class="pagingBox js_results">
           </ul>
+        </section>
+        
+
+        <section class="pagination js_pagination">
+        
         </section>
       </main>
 

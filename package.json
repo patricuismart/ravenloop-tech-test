@@ -4,6 +4,7 @@
 	"description": "Ravenloo Tech Test",
 	"dependencies": {
 		"browser-sync": "^2.26.12",
+		"chart.js": "^3.6.1",
 		"del": "^5.1.0",
 		"eslint": "^7.1.0",
 		"gulp": "^4.0.2",

@@ -19,6 +19,14 @@ body {
 .hidden {
   display: none; }
 
+.pagination__btn-active {
+  background-color: #408ad2;
+  color: #fff; }
+
+.pagination__btn-active {
+  background-color: #408ad2;
+  color: #fff; }
+
 .page__header {
   display: flex;
   justify-content: space-evenly;
