@@ -28,6 +28,7 @@ function userLogin() {
     console.log('im in');
     hideSection.classList.add('hidden');
     pagination.classList.remove('hidden');
+    logoutButon.classList.remove('hidden');
   } else {
     alert('Porfavor ingrese nombre de usuario y contraseña correctos.');
   }
