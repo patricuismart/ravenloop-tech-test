@@ -29,13 +29,13 @@
       <main class="page__main">
         <section><input type="submit" value="Out" class="form__buton js_logout hidden"></input></section>
         <section class="login" id="hideSection">
-          <h1 class="login__title">Login</h1>
+          <h1 class="login__title">Iniciar Sesión</h1>
           <form action="#" class="login__form ">
             <label for="user">Usuario:</label>
-            <input type="text" id="user" class="form__user js_user" />
+            <input type="text" id="user" class="login__form--input js_user" />
             <label for="pass">Password:</label>
-            <input type="password" id="pass" class="form__pass js_pass" />
-            <input type="submit" value="Go" class="form__buton js_login"></input>
+            <input type="password" id="pass" class="login__form--input js_pass" />
+            <input type="submit" value="Go" class="login__form--buton js_login"></input>
           </form>
         </section>
         <button class="buttonBack js_buttonBack hidden">Back</button>
@@ -55,7 +55,10 @@
       <footer class="page__footer">
         <small>
           &copy; Todos los derechos reservados
-          <a class="link__ravenloop" href="https://ravenloop.io/" target="_blank"
+          <a
+            class="link__ravenloop"
+            href="https://ravenloop.io/inicio/"
+            target="_blank"
             >Ravenloop</a
           >
         </small>

@@ -2,59 +2,95 @@
   text-decoration: none;
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: inherit; }
 
 .code {
   font-size: 16px;
   background: #d8d8d8;
   padding: 0 5px;
-  border-radius: 5px;
-}
+  border-radius: 5px; }
 
 body {
-  padding: 2rem;
   height: 100vh;
   background-color: #f3f4f5;
-  font-family: 'Outfit', sans-serif;
-}
+  font-family: "Outfit", sans-serif; }
 
 .hidden {
-  display: none;
-}
+  display: none; }
+
+.page__main {
+  padding: 1.5rem; }
+
+.login {
+  border: solid 0.5px lightgrey;
+  padding: 1.5rem;
+  border-radius: 0.5rem; }
+  .login__title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: #999;
+    margin-bottom: 0.5rem; }
+  .login__form {
+    display: inline-block; }
+    .login__form--input {
+      width: 90%;
+      padding: 0.2rem 0;
+      margin: 0.3rem; }
+    .login__form--buton {
+      color: #ef7c3b;
+      background-color: white;
+      border: solid #ef7c3b 2px;
+      width: 4rem;
+      height: 2rem;
+      margin-top: 0.5rem;
+      border-radius: 22.5px;
+      font-size: 1rem;
+      font-family: "Outfit", sans-serif;
+      text-align: center;
+      transition: background-color 0.5s ease; }
+    .login__form--buton:hover {
+      background-color: #ef7c3b;
+      color: white; }
+
+.pagination__btn-active {
+  background-color: #00b0e1;
+  color: #fff; }
 
 .pagination__btn-active {
   background-color: #408ad2;
-  color: #fff;
-}
-
-.pagination__btn-active {
-  background-color: #408ad2;
-  color: #fff;
-}
+  color: #fff; }
 
 .page__header {
+  padding: 1.5rem;
   display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 3rem;
-}
-.page__header--logo {
-  width: 20%;
-}
-.page__header--title {
-  color: #00b0e1;
-}
+  justify-content: space-between;
+  margin-bottom: 2.5rem; }
+  .page__header--logo {
+    width: 40%;
+    height: 40%; }
+  .page__header--title {
+    font-size: 1.5rem;
+    color: #00b0e1; }
 
 .page__footer {
+  padding: 1.2rem 1.5rem;
+  font-size: 1rem;
+  background-color: #ef7c3b;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100vw;
-  padding: 1rem;
-  color: #999;
-}
+  color: #f3f4f5; }
 
 .main__list {
   padding-left: 2rem;
-  padding-bottom: 20px;
-}
+  padding-bottom: 20px; }
+
+/*# sourceMappingURL=main.css.map */

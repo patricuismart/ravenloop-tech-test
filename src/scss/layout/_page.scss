@@ -1,5 +1,4 @@
 body {
-  padding: 2rem;
   height: 100vh;
   background-color: $color-bg;
   font-family: $font-main;
@@ -8,8 +7,51 @@ body {
   display: none;
 }
 
+.page__main {
+  padding: 1.5rem;
+}
+
+.login {
+  border: solid 0.5px $color-light-grey;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  &__title {
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: $color-secondary;
+    margin-bottom: 0.5rem;
+  }
+  &__form {
+    display: inline-block;
+
+    &--input {
+      width: 90%;
+      padding: 0.2rem 0;
+      margin: 0.3rem;
+    }
+    &--buton {
+      color: $color-orange;
+      background-color: white;
+      border: solid $color-orange 2px;
+      width: 4rem;
+      height: 2rem;
+      margin-top: 0.5rem;
+      border-radius: 22.5px;
+      font-size: 1rem;
+      font-family: $font-main;
+      text-align: center;
+      transition: background-color 0.5s ease;
+    }
+    &--buton:hover {
+      background-color: $color-orange;
+      color: white;
+    }
+  }
+}
+
 .pagination__btn-active {
-  background-color: #408ad2;
+  background-color: $color-blue;
   color: #fff;
 }
 

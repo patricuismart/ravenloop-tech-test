@@ -19,7 +19,6 @@ var page_span = document.getElementById('page');
 // info array results api json
 let login = [];
 let results = [];
-
 let buttons = '';
 
 //User Login
@@ -29,13 +28,13 @@ function userLogin() {
     hideSection.classList.add('hidden');
     pagination.classList.remove('hidden');
     logoutButon.classList.remove('hidden');
-    // call to render results function (with pagination)
     changePage(1);
   } else {
     alert('Porfavor ingrese nombre de usuario y contraseña correctos.');
     user.value = '';
     pass.value = '';
   }
+  // call to render results function (with pagination)
 }
 
 // Handle Functions
@@ -84,11 +83,11 @@ function changePage(page) {
     i++
   ) {
     resultsContainer.innerHTML += `<li id=${results[i].id} class="results__item js_item">
-       <p class="results__name">Nombre del fichero: ${results[i].name}</p>
-       <p class="results__date">fecha de inserción: ${results[i].date}</p>
-       <p class="results__actualization">última actualización: ${results[i].actualization}</p>
-       <p class="results__os">sistema operativo: ${results[i].os}</p>
-     </li>`;
+    <p class="results__name">Nombre del fichero: ${results[i].name}</p>
+    <p class="results__date">fecha de inserción: ${results[i].date}</p>
+    <p class="results__actualization">última actualización: ${results[i].actualization}</p>
+    <p class="results__os">sistema operativo: ${results[i].os}</p>
+  </li>`;
     buttonBack.classList.add('hidden');
     listenList();
   }
@@ -115,6 +114,7 @@ function changePage(page) {
 function numPages() {
   return Math.ceil(results.length / records_per_page);
 }
+
 // Detail of result
 
 // Handle function selected item by id
@@ -125,28 +125,25 @@ function handleItem(ev) {
 
   //render detail item  selected
   let html = '';
-
   for (const result of results) {
     html = `<li id=${result.id} class="results__item js_item">
-       <p class="results__name">Nombre del fichero: ${result.name}</p>
-       <p class="results__extension">Extension: ${result.extension}</p>
-       <p class="results__size">Tamaño: ${result.size}</p>
-       <p class="results__hash">Hash: ${result.hash.md5}</p>
-       <p class="results__hash">Sha256: ${result.hash.sha256}</p>
-       <p class="results__hash">Sha1: ${result.hash.sha1}</p>
-       <p class="results__ip">IP: ${result.ip}</p>
-       <p class="results__score">Puntuación: ${result.score}</p>
-       <p class="results__fileList">Listado ficheros: ${result.fileList.one}</p>
-       <p class="results__fileList">Listado ficheros: ${result.fileList.two}</p>
-       <p class="results__fileList">Listado ficheros: ${result.fileList.three}</p>
-       <p class="results__antivirusList">Kaspersky: ${result.antivirusList.Kaspersky}</p>
-       <p class="results__antivirusList">ESET: ${result.antivirusList.ESET}</p>
-       <p class="results__antivirusList">Norton: ${result.antivirusList.Norton}</p>
-
+    <p class="results__name">Nombre del fichero: ${result.name}</p>
+    <p class="results__extension">Extension: ${result.extension}</p>
+    <p class="results__size">Tamaño: ${result.size}</p>
+    <p class="results__hash">Hash: ${result.hash.md5}</p>
+    <p class="results__hash">Sha256: ${result.hash.sha256}</p>
+    <p class="results__hash">Sha1: ${result.hash.sha1}</p>
+    <p class="results__ip">IP: ${result.ip}</p>
+    <p class="results__score">Puntuación: ${result.score}</p>
+    <p class="results__fileList">Listado ficheros: ${result.fileList.one}</p>
+    <p class="results__fileList">Listado ficheros: ${result.fileList.two}</p>
+    <p class="results__fileList">Listado ficheros: ${result.fileList.three}</p>
+    <p class="results__antivirusList">Kaspersky: ${result.antivirusList.Kaspersky}</p>
+    <p class="results__antivirusList">ESET: ${result.antivirusList.ESET}</p>
+    <p class="results__antivirusList">Norton: ${result.antivirusList.Norton}</p>
      </li>`;
     buttonBack.classList.remove('hidden');
   }
-
   pagination.classList.add('hidden');
   resultsContainer.innerHTML = html;
 }
@@ -186,3 +183,5 @@ callToApi();
 loginButton.addEventListener('click', handleLogin);
 logoutButon.addEventListener('click', handleLogout);
 buttonBack.addEventListener('click', handleBack);
+
+//# sourceMappingURL=main.js.map
