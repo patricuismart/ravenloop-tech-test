@@ -55,7 +55,7 @@ function handleLogout() {
 //Pagination
 
 var current_page = 1;
-var records_per_page = 4;
+var records_per_page = 3;
 
 function prevPage() {
   if (current_page > 1) {
