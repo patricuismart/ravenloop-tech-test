@@ -17,15 +17,15 @@ a:active {
   border-radius: 5px; }
 
 body {
-  height: 100vh;
   background-color: #f3f4f5;
   font-family: "Outfit", sans-serif; }
 
 .hidden {
   display: none; }
 
-.page__main {
-  padding: 1.5rem; }
+@media all and (min-width: 768px) {
+  .page__main {
+    padding: 0 1.5rem; } }
 
 .login {
   width: 90%;
@@ -49,7 +49,7 @@ body {
     @media all and (min-width: 768px) {
       .login__title {
         font-size: 2rem;
-        margin-bottom: 1.5rem; } }
+        margin-right: 20rem; } }
   .login__form {
     display: inline-block; }
     @media all and (min-width: 768px) {
@@ -95,24 +95,26 @@ body {
   margin-left: 1.5rem; }
   .results__resultsContainer {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    text-overflow: ellipsis; }
+    justify-content: space-between; }
   .results__item {
     margin-bottom: 1rem;
     padding: 1rem;
-    width: 20rem;
+    width: 19rem;
     list-style: none;
     border-radius: 0.5rem;
     background-color: rgba(127, 194, 241, 0.2);
     color: #504b4b;
     display: block;
-    overflow: auto; }
+    overflow: auto;
+    cursor: pointer; }
     @media all and (min-width: 768px) {
       .results__item {
         width: 40rem;
         font-size: 1.5rem;
         padding: 1.5rem; } }
+    @media all and (min-width: 768px) {
+      .results__item {
+        width: 50rem; } }
   .results__name {
     font-weight: bold; }
   .results__hash {
@@ -133,37 +135,70 @@ body {
   font-size: 1rem;
   font-family: "Outfit", sans-serif;
   text-align: center;
+  cursor: pointer;
   transition: background-color 0.5s ease; }
   @media all and (min-width: 768px) {
     .buttonBack {
-      width: 6rem;
-      height: 3rem;
+      border-radius: 20px;
+      width: 5rem;
+      height: 2.8rem;
       margin-top: 1rem;
-      font-size: 1.7rem; } }
+      font-size: 1.4rem; } }
+
+.buttonBack:hover {
+  background-color: #ef7c3b;
+  color: white; }
+
+.logout {
+  text-align: end; }
 
 .buton__logout {
   margin-left: 1.5rem;
+  margin-right: 1.5rem;
   color: white;
   background-color: #ef7c3b;
   border: solid #ef7c3b 2px;
-  width: 4rem;
+  width: 6rem;
   height: 2rem;
   margin-bottom: 1.5rem;
   border-radius: 22.5px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-family: "Outfit", sans-serif;
   text-align: center;
   transition: background-color 0.5s ease; }
   @media all and (min-width: 768px) {
     .buton__logout {
-      width: 6rem;
+      border-radius: 20px;
+      width: 10rem;
       height: 3rem;
-      margin-top: 1rem;
-      font-size: 1.7rem; } }
+      margin: 0;
+      font-size: 1.5rem;
+      margin-right: 16rem;
+      margin-bottom: 1rem; } }
 
 .buton__logout:hover {
   background-color: white;
-  color: #ef7c3b; }
+  color: #ef7c3b;
+  cursor: pointer; }
+
+.pagination {
+  color: #999;
+  font-size: 1rem;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem; }
+  .pagination .btn_prev {
+    background-color: #408ad2;
+    color: #fff;
+    margin-right: 1rem; }
+  .pagination .btn_next {
+    background-color: #408ad2;
+    color: #fff; }
+  @media all and (min-width: 768px) {
+    .pagination {
+      font-size: 1.6rem; } }
+
+i {
+  margin-right: 0.5rem; }
 
 .page__header {
   margin: 1.5rem 1.5rem 0.5rem;
@@ -172,7 +207,9 @@ body {
   @media all and (min-width: 768px) {
     .page__header {
       align-items: flex-end;
-      margin: 3rem; } }
+      margin-top: 3rem;
+      margin-left: 3rem;
+      margin-right: 16rem; } }
   .page__header--logo {
     width: 40%;
     height: 40%; }
@@ -185,7 +222,8 @@ body {
     color: #00b0e1; }
     @media all and (min-width: 768px) {
       .page__header--title {
-        font-size: 2.5rem; } }
+        font-size: 2.5rem;
+        margin-right: 1rem; } }
 
 .page__footer {
   padding: 1.2rem 1.5rem;

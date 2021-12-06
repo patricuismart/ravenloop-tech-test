@@ -1,5 +1,4 @@
 body {
-  height: 100vh;
   background-color: $color-bg;
   font-family: $font-main;
 }
@@ -8,7 +7,9 @@ body {
 }
 
 .page__main {
-  padding: 1.5rem;
+  @media all and (min-width: 768px) {
+    padding: 0 1.5rem;
+  }
 }
 
 .login {
@@ -30,9 +31,10 @@ body {
     font-size: 1.2rem;
     color: $color-secondary;
     margin-bottom: 0.5rem;
+
     @media all and (min-width: 768px) {
       font-size: 2rem;
-      margin-bottom: 1.5rem;
+      margin-right: 20rem;
     }
   }
   &__form {
@@ -90,23 +92,25 @@ body {
   &__resultsContainer {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    text-overflow: ellipsis;
   }
   &__item {
     margin-bottom: 1rem;
     padding: 1rem;
-    width: 20rem;
+    width: 19rem;
     list-style: none;
     border-radius: 0.5rem;
     background-color: rgba(127, 194, 241, 0.2);
     color: rgb(80, 75, 75);
     display: block;
     overflow: auto;
+    cursor: pointer;
     @media all and (min-width: 768px) {
       width: 40rem;
       font-size: 1.5rem;
       padding: 1.5rem;
+    }
+    @media all and (min-width: 768px) {
+      width: 50rem;
     }
   }
   &__name {
@@ -130,35 +134,72 @@ body {
   font-size: 1rem;
   font-family: $font-main;
   text-align: center;
+  cursor: pointer;
   transition: background-color 0.5s ease;
   @media all and (min-width: 768px) {
-    width: 6rem;
-    height: 3rem;
+    border-radius: 20px;
+    width: 5rem;
+    height: 2.8rem;
     margin-top: 1rem;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
   }
+}
+
+.buttonBack:hover {
+  background-color: $color-orange;
+  color: white;
+}
+.logout {
+  text-align: end;
 }
 .buton__logout {
   margin-left: 1.5rem;
+  margin-right: 1.5rem;
   color: white;
   background-color: $color-orange;
   border: solid $color-orange 2px;
-  width: 4rem;
+  width: 6rem;
   height: 2rem;
   margin-bottom: 1.5rem;
   border-radius: 22.5px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-family: $font-main;
   text-align: center;
   transition: background-color 0.5s ease;
   @media all and (min-width: 768px) {
-    width: 6rem;
+    border-radius: 20px;
+    width: 10rem;
     height: 3rem;
-    margin-top: 1rem;
-    font-size: 1.7rem;
+    margin: 0;
+    font-size: 1.5rem;
+    margin-right: 16rem;
+    margin-bottom: 1rem;
   }
 }
 .buton__logout:hover {
   background-color: white;
   color: $color-orange;
+  cursor: pointer;
+}
+.pagination {
+  color: $color-secondary;
+  font-size: 1rem;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  .btn_prev {
+    background-color: #408ad2;
+    color: #fff;
+    margin-right: 1rem;
+  }
+
+  .btn_next {
+    background-color: #408ad2;
+    color: #fff;
+  }
+  @media all and (min-width: 768px) {
+    font-size: 1.6rem;
+  }
+}
+i {
+  margin-right: 0.5rem;
 }
