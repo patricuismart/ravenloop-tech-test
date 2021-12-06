@@ -17,7 +17,6 @@ a:active {
   border-radius: 5px; }
 
 body {
-  background-color: #f3f4f5;
   font-family: "Outfit", sans-serif; }
 
 .hidden {
@@ -209,9 +208,8 @@ i:hover {
   color: #00b0e1; }
 
 .page__header {
-  margin: 1.5rem 1.5rem;
-  display: flex;
-  justify-content: space-between; }
+  text-align: center;
+  margin: 1.5rem 1.5rem; }
   @media all and (min-width: 768px) {
     .page__header {
       align-items: flex-end;
