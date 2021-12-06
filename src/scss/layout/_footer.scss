@@ -7,4 +7,8 @@
   bottom: 0;
   width: 100vw;
   color: $color-bg;
+  @media all and (min-width: 768px) {
+    font-size: 1.3rem;
+    padding: 1.8rem;
+  }
 }
