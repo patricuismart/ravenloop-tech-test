@@ -1,21 +1,23 @@
 <main class="page__main">
-  <section><input type="submit" value="Out" class="form__buton js_logout hidden"></input></section>
+  <section><input type="submit" value="Out" class="buton__logout js_logout hidden"></input></section>
   <section class="login" id="hideSection">
     <h1 class="login__title">Iniciar Sesión</h1>
     <form action="#" class="login__form ">
-      <label for="user" class="login__form--label">Usuario:</label>
-      <input type="text" id="user" class="login__form--input js_user" />
-      <label for="pass" class="login__form--label">Password:</label>
-      <input type="password" id="pass" class="login__form--input js_pass" />
+        <label for="user" class="login__form--label">Usuario</label>
+        <input type="text" id="user"  class="login__form--input js_user" />
+        <label for="pass" class="login__form--label">Password</label>
+        <input type="password" id="pass"  class="login__form--input js_pass" />
       <div class="login__form--containerbuton"><input type="submit" value="Go" class="login__form--buton js_login"></input></div>
     </form>
   </section>
-  <button class="buttonBack js_buttonBack hidden">Back</button>
-
-  <section class="results">
-    <ul id="resultsContainer" class="pagingBox js_results">
-  </section>
   
+  <section class="results">
+  <ul id="resultsContainer" class="resultsContainer js_results">
+</section>
+
+<button class="buttonBack js_buttonBack hidden"> Back</button>
+  
+
 
   <section class="pagination hidden js_pagination">
     <a href="javascript:prevPage()" id="btn_prev">Prev</a>

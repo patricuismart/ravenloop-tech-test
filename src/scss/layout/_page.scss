@@ -18,11 +18,11 @@ body {
   padding: 1.5rem;
   border-radius: 0.5rem;
   @media all and (min-width: 768px) {
-    width: 65%;
+    width: 60%;
     padding: 3rem;
   }
   @media all and (min-width: 1024px) {
-    width: 60%;
+    width: 600px;
   }
   &__title {
     text-align: center;
@@ -40,21 +40,20 @@ body {
     @media all and (min-width: 768px) {
       text-align: center;
     }
-
     &--input {
       width: 90%;
-      padding: 0.2rem 0;
+      padding: 0.2rem;
       margin: 0.3rem;
       @media all and (min-width: 768px) {
-        width: 300px;
-        padding: 0.6rem 0;
+        margin: auto;
+        padding: 0.6rem;
         margin: 1rem;
       }
     }
 
     &--label {
       @media all and (min-width: 768px) {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
       }
     }
     &--containerbuton {
@@ -94,4 +93,66 @@ body {
 .pagination__btn-active {
   background-color: #408ad2;
   color: #fff;
+}
+
+.results {
+  &__resultsContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__item {
+    overflow-wrap: wrap;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    width: 20rem;
+    list-style: none;
+    border-radius: 0.5rem;
+    border: 1px solid (127, 194, 241);
+    background-color: rgba(127, 194, 241, 0.2);
+    font-weight: bold;
+    color: rgb(80, 75, 75);
+  }
+}
+.buttonBack {
+  color: $color-orange;
+  background-color: white;
+  border: solid $color-orange 2px;
+  width: 4rem;
+  height: 2rem;
+  margin-top: 0.5rem;
+  border-radius: 22.5px;
+  font-size: 1rem;
+  font-family: $font-main;
+  text-align: center;
+  transition: background-color 0.5s ease;
+  @media all and (min-width: 768px) {
+    width: 5rem;
+    height: 3rem;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+  }
+}
+.buton__logout {
+  color: white;
+  background-color: $color-orange;
+  border: solid $color-orange 2px;
+  width: 4rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 22.5px;
+  font-size: 1rem;
+  font-family: $font-main;
+  text-align: center;
+  transition: background-color 0.5s ease;
+  @media all and (min-width: 768px) {
+    width: 5rem;
+    height: 3rem;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+  }
+}
+.buton__logout:hover {
+  background-color: white;
+  color: $color-orange;
 }
