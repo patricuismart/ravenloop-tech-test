@@ -1,5 +1,6 @@
 body {
   font-family: $font-main;
+  background-color: #e4ecf4;
 }
 .hidden {
   display: none;
@@ -212,4 +213,7 @@ i {
 }
 i:hover {
   color: $color-blue;
+}
+.gif_container {
+  text-align: center;
 }

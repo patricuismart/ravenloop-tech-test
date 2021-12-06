@@ -17,7 +17,8 @@ a:active {
   border-radius: 5px; }
 
 body {
-  font-family: "Outfit", sans-serif; }
+  font-family: "Outfit", sans-serif;
+  background-color: #e4ecf4; }
 
 .hidden {
   display: none; }
@@ -206,6 +207,9 @@ i {
 
 i:hover {
   color: #00b0e1; }
+
+.gif_container {
+  text-align: center; }
 
 .page__header {
   text-align: center;
