@@ -10,6 +10,13 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./assets/css/main.css" />
 
     <link rel="icon" href="./assets/images/favicon.png" />
@@ -18,16 +25,18 @@
   <body>
     <div class="page">
       <header class="page__header">
-        <img
-          class="page__header--logo"
-          src="./assets/images/logo-ravensight.png"
-          alt="Ravenloop"
-        />
-        <h1 class="page__header--title">Wellcome</h1>
+        <a href="https://ravenloop.io/" alt="Home Ravenloop" title="Home">
+          <img
+            class="page__header--logo"
+            src="./assets/images/logo-ravensight.png"
+            alt="Ravenloop"
+          />
+        </a>
+        <h1 class="page__header--title js_wellcome">Wellcome</h1>
       </header>
 
       <main class="page__main">
-        <section><input type="submit" value="Out" class="buton__logout js_logout hidden"></input></section>
+        <section class="logout"><input type="submit" value="Cerrar Sesión" class="buton__logout js_logout hidden"></input></section>
         <section class="login" id="hideSection">
           <h1 class="login__title">Iniciar Sesión</h1>
           <form action="#" class="login__form ">
@@ -35,23 +44,22 @@
               <input type="text" id="user"  class="login__form--input js_user" />
               <label for="pass" class="login__form--label">Password</label>
               <input type="password" id="pass"  class="login__form--input js_pass" />
-            <div class="login__form--containerbuton"><input type="submit" value="Go" class="login__form--buton js_login"></input></div>
+            <div class="login__form--containerbuton"><input type="submit" value="Entrar" class="login__form--buton js_login"></input></div>
           </form>
+        </section>
+
+        <section class="pagination hidden js_pagination">
+          <a href="javascript:prevPage()" id="btn_prev" clas="btn_prev"><i class="fas fa-arrow-alt-circle-left"></i></a>
+          <a href="javascript:nextPage()" id="btn_next" clas="btn_next"><i class="fas fa-arrow-alt-circle-right"></i></a>
+          page: <span id="page"></span>
         </section>
         
         <section class="results">
         <ul id="resultsContainer" class="resultsContainer js_results">
       </section>
 
-      <button class="buttonBack js_buttonBack hidden"> Back</button>
-        
+      <button class="buttonBack js_buttonBack hidden"> Atrás</button>
 
-
-        <section class="pagination hidden js_pagination">
-          <a href="javascript:prevPage()" id="btn_prev">Prev</a>
-          <a href="javascript:nextPage()" id="btn_next">Next</a>
-          page: <span id="page"></span>
-        </section>
       </main>
 
       <footer class="page__footer">
@@ -61,6 +69,7 @@
             class="link__ravenloop"
             href="https://ravenloop.io/inicio/"
             target="_blank"
+            title="Home Ravenloop"
             >Ravenloop</a
           >
         </small>
