@@ -91,33 +91,38 @@ body {
       background-color: #ef7c3b;
       color: white; }
 
-.results__resultsContainer {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  text-overflow: ellipsis; }
-
-.results__item {
-  margin-bottom: 1rem;
-  padding: 1rem;
-  width: 20rem;
-  list-style: none;
-  border-radius: 0.5rem;
-  background-color: rgba(127, 194, 241, 0.2);
-  color: #504b4b;
-  display: block;
-  overflow: auto; }
-
-.results__name {
-  font-weight: bold; }
-
-.results__hash {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  white-space: initial; }
+.results {
+  margin-left: 1.5rem; }
+  .results__resultsContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-overflow: ellipsis; }
+  .results__item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    width: 20rem;
+    list-style: none;
+    border-radius: 0.5rem;
+    background-color: rgba(127, 194, 241, 0.2);
+    color: #504b4b;
+    display: block;
+    overflow: auto; }
+    @media all and (min-width: 768px) {
+      .results__item {
+        width: 40rem;
+        font-size: 1.5rem;
+        padding: 1.5rem; } }
+  .results__name {
+    font-weight: bold; }
+  .results__hash {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    white-space: initial; }
 
 .buttonBack {
+  margin-left: 1.5rem;
   color: #ef7c3b;
   background-color: white;
   border: solid #ef7c3b 2px;
@@ -131,12 +136,13 @@ body {
   transition: background-color 0.5s ease; }
   @media all and (min-width: 768px) {
     .buttonBack {
-      width: 5rem;
+      width: 6rem;
       height: 3rem;
       margin-top: 1rem;
       font-size: 1.7rem; } }
 
 .buton__logout {
+  margin-left: 1.5rem;
   color: white;
   background-color: #ef7c3b;
   border: solid #ef7c3b 2px;
@@ -150,7 +156,7 @@ body {
   transition: background-color 0.5s ease; }
   @media all and (min-width: 768px) {
     .buton__logout {
-      width: 5rem;
+      width: 6rem;
       height: 3rem;
       margin-top: 1rem;
       font-size: 1.7rem; } }
