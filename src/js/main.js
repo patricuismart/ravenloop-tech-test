@@ -3,6 +3,7 @@
 // global variables
 const user = document.querySelector('.js_user');
 const pass = document.querySelector('.js_pass');
+const wellcome = document.querySelector('.js_wellcome');
 const loginButton = document.querySelector('.js_login');
 const logoutButon = document.querySelector('.js_logout');
 const buttonBack = document.querySelector('.js_buttonBack');
@@ -28,6 +29,7 @@ function userLogin() {
     hideSection.classList.add('hidden');
     pagination.classList.remove('hidden');
     logoutButon.classList.remove('hidden');
+    wellcome.classList.add('hidden');
     changePage(1);
   } else {
     alert('Porfavor ingrese nombre de usuario y contraseña correctos.');
