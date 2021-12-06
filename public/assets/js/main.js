@@ -96,7 +96,9 @@ function changePage(page) {
 
   //render page number
 
-  page_span.innerHTML = page;
+  const totalPages = Math.ceil(results.length / records_per_page);
+  console.log(totalPages);
+  page_span.innerHTML = `${page} / ${totalPages}`;
 
   if (page == 1) {
     btn_prev.style.visibility = 'hidden';
