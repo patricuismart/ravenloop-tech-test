@@ -134,19 +134,19 @@ function handleItem(ev) {
   for (const result of results) {
     html = `<li id=${result.id} class="results__item js_item">
     <p class="results__name">Nombre del fichero: ${result.name}</p>
-    <p class="results__extension">Extension: ${result.extension}</p>
-    <p class="results__size">Tamaño: ${result.size}</p>
-    <p class="results__hash">Hash: ${result.hash.md5}</p>
-    <p class="results__hash">Sha256: ${result.hash.sha256}</p>
-    <p class="results__hash">Sha1: ${result.hash.sha1}</p>
-    <p class="results__ip">IP: ${result.ip}</p>
-    <p class="results__score">Puntuación: ${result.score}</p>
-    <p class="results__fileList">Listado ficheros: ${result.fileList.one}</p>
-    <p class="results__fileList">Listado ficheros: ${result.fileList.two}</p>
-    <p class="results__fileList">Listado ficheros: ${result.fileList.three}</p>
-    <p class="results__antivirusList">Kaspersky: ${result.antivirusList.Kaspersky}</p>
-    <p class="results__antivirusList">ESET: ${result.antivirusList.ESET}</p>
-    <p class="results__antivirusList">Norton: ${result.antivirusList.Norton}</p>
+    <p class="results__extension"><strong>Extension:</strong> ${result.extension} <i class="fas fa-file-pdf pdf_icon"></i></p>
+    <p class="results__size"><strong>Tamaño:</strong> ${result.size}</p>
+    <p class="results__hash"><strong>Hash:</strong> ${result.hash.md5}</p>
+    <p class="results__hash"><strong>Sha256:</strong> ${result.hash.sha256}</p>
+    <p class="results__hash"><strong>Sha1:</strong> ${result.hash.sha1}</p>
+    <p class="results__ip"><strong>IP:</strong> ${result.ip}</p>
+    <p class="results__score"><strong>Puntuación:</strong> ${result.score}</p>
+    <p class="results__fileList"><strong>Listado ficheros:</strong> ${result.fileList.one}</p>
+    <p class="results__fileList"><strong>Listado ficheros:</strong> ${result.fileList.two}</p>
+    <p class="results__fileList"><strong>Listado ficheros:</strong> ${result.fileList.three}</p>
+    <p class="results__antivirusList"><strong>Kaspersky:</strong> ${result.antivirusList.Kaspersky}</p>
+    <p class="results__antivirusList"><strong>ESET:</strong> ${result.antivirusList.ESET}</p>
+    <p class="results__antivirusList"><strong>Norton:</strong> ${result.antivirusList.Norton}</p>
      </li>`;
     buttonBack.classList.remove('hidden');
   }
