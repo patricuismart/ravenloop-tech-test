@@ -91,30 +91,31 @@ body {
       background-color: #ef7c3b;
       color: white; }
 
-.pagination__btn-active {
-  background-color: #00b0e1;
-  color: #fff; }
-
-.pagination__btn-active {
-  background-color: #408ad2;
-  color: #fff; }
-
 .results__resultsContainer {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  text-overflow: ellipsis; }
 
 .results__item {
-  overflow-wrap: wrap;
   margin-bottom: 1rem;
   padding: 1rem;
   width: 20rem;
   list-style: none;
   border-radius: 0.5rem;
-  border: 1px solid 127, 194, 241;
   background-color: rgba(127, 194, 241, 0.2);
-  font-weight: bold;
-  color: #504b4b; }
+  color: #504b4b;
+  display: block;
+  overflow: auto; }
+
+.results__name {
+  font-weight: bold; }
+
+.results__hash {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  white-space: initial; }
 
 .buttonBack {
   color: #ef7c3b;
@@ -141,7 +142,7 @@ body {
   border: solid #ef7c3b 2px;
   width: 4rem;
   height: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   border-radius: 22.5px;
   font-size: 1rem;
   font-family: "Outfit", sans-serif;

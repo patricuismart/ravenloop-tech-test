@@ -85,33 +85,31 @@ body {
   }
 }
 
-.pagination__btn-active {
-  background-color: $color-blue;
-  color: #fff;
-}
-
-.pagination__btn-active {
-  background-color: #408ad2;
-  color: #fff;
-}
-
 .results {
   &__resultsContainer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    text-overflow: ellipsis;
   }
   &__item {
-    overflow-wrap: wrap;
     margin-bottom: 1rem;
     padding: 1rem;
     width: 20rem;
     list-style: none;
     border-radius: 0.5rem;
-    border: 1px solid (127, 194, 241);
     background-color: rgba(127, 194, 241, 0.2);
-    font-weight: bold;
     color: rgb(80, 75, 75);
+    display: block;
+    overflow: auto;
+  }
+  &__name {
+    font-weight: bold;
+  }
+  &__hash {
+    height: fit-content;
+
+    white-space: initial;
   }
 }
 .buttonBack {
@@ -139,7 +137,7 @@ body {
   border: solid $color-orange 2px;
   width: 4rem;
   height: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   border-radius: 22.5px;
   font-size: 1rem;
   font-family: $font-main;
